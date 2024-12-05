@@ -19,7 +19,7 @@ app.post('/weather/show.ejs', (req,res)=>{
     url: `http://api.openweathermap.org/data/2.5/weather?q=${zip},us&APPID=${process.env.API}`
   })
   .then((response)=>{
-    res.render('/weather/show.ejs', { data: response.data })
+    res.render('weather/show.ejs', { data: response.data })
   })
   .catch((err)=>{
     console.log(err)
@@ -29,3 +29,4 @@ app.post('/weather/show.ejs', (req,res)=>{
 app.listen(PORT, () => {
   console.log(`Auth App is listening for requests on port ${PORT}`)
 })
+
